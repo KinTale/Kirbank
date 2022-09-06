@@ -4,9 +4,9 @@ import Login from './components/Login'
 
 function App() {
   return (
-    <div className="App">
+    <div className="d-flex justify-content-center align-items-center full-height">
 <Routes>
-  <Route path="/login" element={<Login />} />
+  <Route path="/" element={<Login />} />
 </Routes>
     </div>
   );
