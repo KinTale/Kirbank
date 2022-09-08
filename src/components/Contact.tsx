@@ -18,7 +18,7 @@ function Contact() {
         <p><span className="fw-bold">Email: </span> dontcontactus@email.com</p>
         </div>
         </div>
-       <Button className='m-2' onClick={() => navigate('/home')}>Back to Home</Button>
+       <Button className='m-2 btn-dark' onClick={() => navigate('/home')}>Back to Home</Button>
       </div>
     );
   }

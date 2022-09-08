@@ -6,7 +6,7 @@ function ViewTransactions() {
     return (
       <div className="d-flex flex-column justify-content-center align-items-center border p-3">
        This the view transactions page
-       <Button onClick={() => navigate('/home')}>Back to Home</Button>
+       <Button className="btn-dark" onClick={() => navigate('/home')}>Back to Home</Button>
       </div>
     );
   }
