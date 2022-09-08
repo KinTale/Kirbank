@@ -1,14 +1,15 @@
 import { useNavigate } from "react-router-dom"
 import { Button } from "react-bootstrap"
 
-function ViewTransactions() {
+function Edit() {
+ 
     let navigate = useNavigate()
     return (
       <div className="d-flex flex-column justify-content-center align-items-center border p-3">
-       This the view transactions page
+       This the Edit Details page
        <Button onClick={() => navigate('/home')}>Back to Home</Button>
       </div>
     );
   }
   
-  export default ViewTransactions;
+  export default Edit;
