@@ -10,9 +10,9 @@ function App() {
   return (
     <div className="d-flex justify-content-center align-items-center full-height bg-secondary">
 <Routes>
-  <Route path="/login" element={<Login />} />
+  <Route path="/" element={<Login />} />
   <Route path="/signup" element={<SignUp />} />
-  <Route path="/" element={<Home />} />
+  <Route path="/home" element={<Home />} />
   <Route path="/add-transactions" element={<AddTransactions />} />
   <Route path="/view-transactions" element={<ViewTransactions />} />
 </Routes>

@@ -31,7 +31,7 @@ function Login() {
     .then(res => {
       console.log(res)
       storage.saveStorage(res.data.token)
-      navigate('/')
+      navigate('/home')
     })   
   };
 
