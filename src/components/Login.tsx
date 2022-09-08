@@ -3,8 +3,15 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import client from '../utils/client'
 import storage from '../utils/storage'
+import { UserInfo } from '../utils/interfaces'
 
-function Login() {
+interface StateProps {
+  setUserInfo : (user : UserInfo) => void;
+}
+
+function Login(props: StateProps) {
+  const { setUserInfo } = props
+
   const blankData = {
     email: "",
     password: ""
@@ -30,6 +37,10 @@ function Login() {
     client.post('/login', user)
     .then(res => {
       console.log(res)
+      setUserInfo({
+        userId: res.data.userId,
+        username: res.data.username
+      })
       storage.saveStorage(res.data.token)
       navigate('/home')
     })   
