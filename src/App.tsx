@@ -2,7 +2,8 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Login from './components/Login'
 import SignUp from './components/SignUp'
-import Transactions from './components/Transactions'
+import AddTransactions from './components/AddTransactions';
+import ViewTransactions from './components/ViewTransactions'
 import Home from './components/Home'
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
   <Route path="/login" element={<Login />} />
   <Route path="/signup" element={<SignUp />} />
   <Route path="/" element={<Home />} />
-  <Route path="/transactions" element={<Transactions />} />
+  <Route path="/add-transactions" element={<AddTransactions />} />
+  <Route path="/view-transactions" element={<ViewTransactions />} />
 </Routes>
     </div>
   );

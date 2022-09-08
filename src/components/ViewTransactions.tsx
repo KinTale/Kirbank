@@ -1,10 +1,10 @@
-function Transactions() {
+function ViewTransactions() {
  
     return (
       <div className="d-flex flex-column justify-content-center align-items-center border p-3">
-       This the transactions page
+       This the view transactions page
       </div>
     );
   }
   
-  export default Transactions;
+  export default ViewTransactions;
