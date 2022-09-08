@@ -37,12 +37,15 @@ function Login() {
 
     return (
       <div className="d-flex flex-column justify-content-center align-items-center border p-3">
-        <header className="text-bg-primary m-3">KirBank</header>
+               <header className="m-2">
+            <p className="fw-bold">KirBank</p>
+            </header>
         <form className="d-flex flex-column justify-content-center align-items-center " onSubmit={handleSubmit}>
           <input type="email" placeholder="Email" name='email' value={user.email} onChange={handleChange} />
           <input className='mt-2' type="password" placeholder="Password" name='password' value={user.password} onChange={handleChange} />
           <Button className='mt-3' variant="light" type="submit">Login</Button>
         </form>
+        <p className="mt-2">Need an account? Sign up <span className='text-primary' onClick={() => navigate('/signup')}>here</span></p>
       </div>
     );
   }

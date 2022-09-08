@@ -46,6 +46,7 @@ function SignUp() {
           <input className='mt-2' type="password" placeholder="Password" name='password' value={user.password} onChange={handleChange} />
           <Button className='mt-3' variant="light" type="submit">Sign Up</Button>
         </form>
+        <p className="mt-2">Already have an account? Login <span className='text-primary' onClick={() => navigate('/login')}>here</span></p>
       </div>
     );
   }
