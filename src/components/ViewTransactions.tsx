@@ -3,14 +3,10 @@ import { useState, useEffect } from "react";
 import client from "../utils/client";
 import dateFormat from 'dateformat'
 import { Button } from "react-bootstrap";
+import { Transaction } from "../utils/interfaces";
 
 function ViewTransactions() {
   let navigate = useNavigate()
-  interface Transaction {
-    title: string,
-    amount: number,
-    date: number
-  }
   const [transactions, setTransactions] = useState<Transaction[]>([])
 
   useEffect(() => {

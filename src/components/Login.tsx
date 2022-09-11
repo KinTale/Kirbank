@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import client from '../utils/client'
 import storage from '../utils/storage'
-import { UserInfo } from '../utils/interfaces'
+import { UserInfo} from '../utils/interfaces'
 
 interface StateProps {
   setUserInfo : (user : UserInfo) => void;

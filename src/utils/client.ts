@@ -14,7 +14,11 @@ const client = {
   
     post: (path : string, data : object) => {
       const url = `${host}${path}`;
-      return axios.post(url, data);
+      const headers = {
+        Authorization: `Bearer ${storage.loadStorage()}`,
+      };
+  
+      return axios.post(url, data, {headers});
     }
 
 }
