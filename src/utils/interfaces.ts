@@ -11,7 +11,7 @@ export interface LoginForm{
 }
 
 export interface Transaction {
-  title: string;
+  description: string;
   amount: number;
   date?: Date;
   type: string

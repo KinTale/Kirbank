@@ -15,6 +15,7 @@ function ViewTransactions() {
         setTransactions(res.data.list))
   }, [])
 console.log(transactions)
+
   return (
     <div className="container">
       
@@ -33,7 +34,7 @@ console.log(transactions)
         <thead >
           <tr>
             <th scope="col">Date</th>
-            <th scope="col">Title</th>
+            <th scope="col">Description</th>
             <th scope="col">Money in</th>
             <th scope="col">Money out</th>
             <th scope="col">Balance</th>
@@ -43,8 +44,9 @@ console.log(transactions)
           <tbody key={index}>
             <tr className="table-secondary">
               <th scope="row">{dateFormat(item.date, "mmm dS, yy")}</th>
-              <td>{item.title}</td>
-              <td>{item.amount}</td>
+              <td>{item.description}</td>
+              <td>{item.type === 'deposit' ? item.amount : ""}</td>
+              <td>{item.type === 'withdrawl' ? -Math.abs(item.amount) : ""}</td>
               <td>TBA</td>
             </tr>
           </tbody>

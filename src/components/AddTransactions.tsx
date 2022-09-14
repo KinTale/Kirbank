@@ -64,7 +64,7 @@ function AddTransactions() {
 
           <label className="d-flex align-items-center ">
             <input type='radio' value='deposit' name="deposit" onChange={handleRadio} checked={radio === "deposit"} />
-            <h6 className="m-2">Desposit</h6>
+            <h6 className="m-2">Deposit</h6>
             <input type='radio' value='withdrawl' name="withdrawl" onChange={handleRadio} checked={radio === "withdrawl"} />
             <h6 className="m-2">Withdrawl</h6>
           </label>
