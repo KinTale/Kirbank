@@ -14,7 +14,7 @@ function ViewTransactions() {
       .then(res =>
         setTransactions(res.data.list))
   }, [])
-
+console.log(transactions)
   return (
     <div className="container">
       
@@ -34,7 +34,8 @@ function ViewTransactions() {
           <tr>
             <th scope="col">Date</th>
             <th scope="col">Title</th>
-            <th scope="col">Amount</th>
+            <th scope="col">Money in</th>
+            <th scope="col">Money out</th>
             <th scope="col">Balance</th>
           </tr>
         </thead>

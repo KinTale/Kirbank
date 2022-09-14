@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom"
 function AddTransactions() {
   let navigate = useNavigate()
   const blankData = {
-    title: "",
+    description: "",
     amount: 0,
     date: new Date() as Date,
     type: "deposit"
@@ -56,8 +56,8 @@ function AddTransactions() {
     <div className="d-flex flex-column "><h1 className="mb-2"> Add Transactions</h1>
       <Form className="border shadow-sm rounded border-dark p-3" onSubmit={handleSubmit}>
         <Form.Group className="d-flex flex-column" >
-          <label htmlFor="title">Title</label>
-          <input className="mb-2" placeholder="Type description" name='title' value={transactions.title} onChange={handleChange} />
+          <label htmlFor="title">Description</label>
+          <input className="mb-2" placeholder="Type description" name='description' value={transactions.description} onChange={handleChange} />
 
           <label htmlFor="amount">Amount</label>
           <input className='mb-2' type='number' placeholder="Amount" name='amount' value={transactions.amount} onChange={handleChange} />
