@@ -5,31 +5,35 @@ import dateFormat from 'dateformat'
 import { Button } from "react-bootstrap";
 import { Transaction } from "../utils/interfaces";
 
-function ViewTransactions() {
+interface StateProps {
+  balance: number
+}
+function ViewTransactions(props: StateProps) {
   let navigate = useNavigate()
   const [transactions, setTransactions] = useState<Transaction[]>([])
+  const { balance } = props
 
   useEffect(() => {
     client.get('/transaction')
       .then(res =>
         setTransactions(res.data.list))
   }, [])
-console.log(transactions)
+  console.log(transactions)
 
   return (
     <div className="container">
-      
+
       <Button className="btn-dark " onClick={() => navigate('/home')}>Back to Home</Button>
       <nav className="navbar ">
         <form className="d-flex ">
           <input className="form-control me-2" type="search" placeholder="Transaction" aria-label="Search" />
           <button className="btn btn-dark" type="submit">Search</button>
         </form>
-         <div >
-       <h3>Current Balance: -£300:00</h3>
-      </div>
+        <div >
+          <h3>Current Balance: {balance}</h3>
+        </div>
       </nav>
-     
+
       <table className="table table-sm table-bordered table-dark table-hover table-responsive" >
         <thead >
           <tr>
@@ -47,7 +51,7 @@ console.log(transactions)
               <td>{item.description}</td>
               <td>{item.type === 'deposit' ? item.amount : ""}</td>
               <td>{item.type === 'withdrawl' ? -Math.abs(item.amount) : ""}</td>
-              <td>TBA</td>
+              <td>{item.balanceAtTime}</td>
             </tr>
           </tbody>
         ))}

@@ -36,8 +36,7 @@ function AddTransactions() {
 
   const handleSubmit = (e: submit): void => {
     e.preventDefault()
-    // if (transactions.type === 'withdrawl')
-    //   setTransactions({ ...transactions, amount: -Math.abs(transactions.amount) })
+  
 
     client.post('/transaction', transactions)
       .then(res => console.log({ res: res }))

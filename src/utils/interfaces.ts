@@ -14,7 +14,8 @@ export interface Transaction {
   description: string;
   amount: number;
   date?: Date;
-  type: string
+  type: string,
+  balanceAtTime: number
 }
 
 export type change = React.ChangeEvent<HTMLInputElement>

@@ -3,7 +3,8 @@ import { Button } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 
 interface StateProps {
-  userInfo : UserInfo;
+  userInfo : UserInfo
+  balance: number
 }
 
 const homeStyle = {
@@ -13,7 +14,7 @@ const homeStyle = {
 
 function Home(props: StateProps) {
  
-  const { userInfo } = props
+  const { userInfo , balance} = props
   
   let navigate = useNavigate()
     
@@ -21,7 +22,7 @@ function Home(props: StateProps) {
       <div>
         <h1 className='mb-4'>Hi {userInfo.username}</h1>
       <div className="d-flex flex-column justify-content-center align-items-center border p-3 mb-4">
-       <h3>Current Balance: -£300:00</h3>
+       <h3>Current Balance: {balance}</h3>
       </div>
       <div className='container text-center'>
         <div className="row">
