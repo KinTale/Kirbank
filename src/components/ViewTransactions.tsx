@@ -7,16 +7,20 @@ import { Transaction } from "../utils/interfaces";
 
 interface StateProps {
   balance: number
+  setBalance: (balance : number) => void;
 }
 function ViewTransactions(props: StateProps) {
   let navigate = useNavigate()
   const [transactions, setTransactions] = useState<Transaction[]>([])
-  const { balance } = props
+  const { setBalance, balance } = props
 
   useEffect(() => {
     client.get('/transaction')
       .then(res =>
         setTransactions(res.data.list))
+        client.get('/balance')
+      .then(res => {
+        setBalance(res.data.data.balance)})
   }, [])
   console.log(transactions)
 

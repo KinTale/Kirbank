@@ -1,9 +1,13 @@
 import { UserInfo } from "../utils/interfaces"
 import { Button } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
+import { useEffect } from "react"
+import client from "../utils/client"
+import storage from "../utils/storage"
 
 interface StateProps {
   userInfo : UserInfo
+  setBalance: (balance : number) => void;
   balance: number
 }
 
@@ -13,10 +17,22 @@ const homeStyle = {
 }
 
 function Home(props: StateProps) {
+
+  const { userInfo, setBalance, balance } = props
  
-  const { userInfo , balance} = props
+  useEffect(() => {
+    client.get('/balance')
+      .then(res => {
+        setBalance(res.data.data.balance)})
+  }, [])
+
   
   let navigate = useNavigate()
+
+  const logout = () => {
+    storage.clearStorage()
+    navigate('/')
+  }
     
   return (
       <div>
@@ -33,6 +49,9 @@ function Home(props: StateProps) {
         <Button className='col m-1 btn-dark' style={homeStyle} onClick={() => navigate('/edit')}>Edit Details</Button>
         <Button className='col m-1 btn-dark' onClick={() => navigate('/contact')}>Contact Us</Button>
         </div>
+      </div>
+      <div className="mt-5">
+        <Button className='btn-dark' onClick={logout}>logout</Button>
       </div>
       </div>
     );

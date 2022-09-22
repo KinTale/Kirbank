@@ -1,5 +1,5 @@
-import react, { FormEvent, useState } from "react";
-import { Transaction, change, submit } from "../utils/interfaces";
+import { useState } from "react";
+import { change, submit } from "../utils/interfaces";
 import { Button } from "react-bootstrap";
 import client from "../utils/client";
 import Form from "react-bootstrap/Form";
